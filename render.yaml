@@ -1,0 +1,26 @@
+# Exported from Render on 2024-12-19T22:34:36Z
+services:
+- type: web
+  name: VocabVault-1
+  runtime: node
+  repo: https://github.com/vladamarynych/VocabVault
+  plan: free
+  envVars:
+  - key: SESSION_SECRET
+    sync: false
+  - key: PORT
+    sync: false
+  - key: DB_PORT
+    sync: false
+  - key: DB_PASSWORD
+    sync: false
+  - key: DB_NAME
+    sync: false
+  - key: DB_HOST
+    sync: false
+  - key: DB_USER
+    sync: false
+  region: oregon
+  buildCommand: npm install
+  startCommand: node index.js
+version: "1"

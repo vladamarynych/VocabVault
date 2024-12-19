@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VocabVault</title>
+    <link rel="stylesheet" href="/styles/dictionary.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Knewave&family=Lexend:wght@100..900&family=Margarine&family=Mogra&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Your Dictionary</h1>
+    </header>
+    <main>
+      <table>
+        <thead>
+          <tr>
+            <th>Word</th>
+            <th>Translation</th>
+            <!-- <th>Added Date</th> -->
+          </tr>
+        </thead>
+        <tbody>
+          <% if (dictionary.length > 0) { %> <% dictionary.forEach(entry => { %>
+          <tr>
+            <td><%= entry.word %></td>
+            <td><%= entry.translation %></td>
+          </tr>
+          <% }); %> <% } else { %>
+          <tr>
+            <td colspan="3">No words added yet. Check back tomorrow!</td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VocabVault</title>
+    <link rel="stylesheet" href="/styles/result.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chewy&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chewy&family=Funnel+Display:wght@300..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Chewy&family=Funnel+Display:wght@300..800&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="result-div">
+      <h1>
+        Your <%= language.charAt(0).toUpperCase() + language.slice(1) %> Test
+        Result
+      </h1>
+      <p>
+        You answered <%= correct %> out of <%= total %> questions correctly!
+      </p>
+
+      <% if (correct === total && topic === 'grammar') { %>
+      <form action="/level-up" method="POST">
+        <input type="hidden" name="language" value="<%= language %>" />
+        <input type="hidden" name="currentlevel" value="<%= currentlevel %>" />
+        <button type="submit">Level Up</button>
+      </form>
+      <% } %>
+      <a href="/improvement-select">Try Again</a>
+    </div>
+  </body>
+</html>

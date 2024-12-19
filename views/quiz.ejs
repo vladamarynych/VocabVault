@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VocabVault</title>
+    <link rel="stylesheet" href="/styles/quiz.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chewy&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chewy&family=Funnel+Display:wght@300..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Chewy&family=Funnel+Display:wght@300..800&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="quiz-container">
+      <form id="quiz-form" action="/result" method="POST">
+        <input type="hidden" name="language" value="<%= language %>" />
+
+        <div id="quiz-questions">
+          <% questions.forEach((question, qIndex) => { %>
+          <div
+            class="quiz-slide <%= qIndex === 0 ? 'active' : 'hidden' %>"
+            data-index="<%= qIndex %>"
+          >
+            <div class="question">
+              <p><%= question.text %></p>
+              <% question.answers.forEach((answer, aIndex) => { %>
+              <label>
+                <input
+                  type="radio"
+                  name="answers[<%= qIndex %>]"
+                  value="<%= aIndex %>"
+                  required
+                  checked
+                />
+                <%= answer %>
+              </label>
+              <% }) %>
+            </div>
+          </div>
+          <% }) %>
+        </div>
+
+        <div class="button-container">
+          <button type="button" id="prev-btn" class="hidden">Previous</button>
+          <button type="button" id="next-btn">Next</button>
+          <button type="submit" id="submit-btn" class="hidden">Submit</button>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      const slides = document.querySelectorAll(".quiz-slide");
+      const prevBtn = document.getElementById("prev-btn");
+      const nextBtn = document.getElementById("next-btn");
+      const submitBtn = document.getElementById("submit-btn");
+      let currentSlide = 0;
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.toggle("active", i === index);
+          slide.classList.toggle("hidden", i !== index);
+        });
+
+        prevBtn.classList.toggle("hidden", index === 0);
+        nextBtn.classList.toggle("hidden", index === slides.length - 1);
+        submitBtn.classList.toggle("hidden", index !== slides.length - 1);
+      }
+
+      nextBtn.addEventListener("click", () => {
+        if (currentSlide < slides.length - 1) {
+          currentSlide++;
+          showSlide(currentSlide);
+        }
+      });
+
+      prevBtn.addEventListener("click", () => {
+        if (currentSlide > 0) {
+          currentSlide--;
+          showSlide(currentSlide);
+        }
+      });
+
+      showSlide(currentSlide);
+    </script>
+  </body>
+</html>

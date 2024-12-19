@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VocabVault</title>
+    <link rel="stylesheet" href="/styles/improvement-select.css" />
+  </head>
+  <body>
+    <form action="/improvement-question" method="GET">
+      <h1>What would you like to improve?</h1>
+      <input type="hidden" name="language" value="<%= user.language %>" />
+      <input
+        type="hidden"
+        name="currentlevel"
+        value="<%= user.currentlevel %>"
+      />
+      <button type="submit" name="topic" value="vocabulary">Vocabulary</button>
+      <button type="submit" name="topic" value="grammar">Grammar</button>
+    </form>
+  </body>
+</html>

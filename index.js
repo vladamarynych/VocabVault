@@ -40,6 +40,8 @@ app.use(
   })
 );
 
+const PORT = process.env.PORT || 3000;
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
@@ -2358,4 +2360,6 @@ app.post("/level-up", async (req, res) => {
   }
 });
 
-app.listen();
+app.listen(PORT, () => {
+  console.log(`Server is listening on port ${PORT}`);
+});

@@ -118,6 +118,10 @@ body {
     height: 100%;
   }
 
+    p{
+    font-size:20px
+  }
+
   label {
     font-size: 2px;
   }
@@ -171,6 +175,10 @@ body {
     font-size: 16px;
   }
 
+  p{
+    font-size:20px
+  }
+  
   label {
     display: block;
     font-size: 14px;

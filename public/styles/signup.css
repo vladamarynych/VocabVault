@@ -1,0 +1,132 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: "Funnel Display", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 150;
+  font-style: normal;
+  background-image: url("/assets/images/background.jpg");
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  font-size: 65px;
+  font-family: "Chewy", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: #200a1a;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.login-signup-container {
+  width: 30%;
+  height: 500px;
+  margin: 0 auto;
+  margin-top: 100px;
+  padding: 20px;
+  border: 1px solid #200a1a;
+  border-radius: 10px;
+  background-color: #e3c3e6;
+  opacity: 0.85;
+}
+
+.login-signup-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+.login-signup-container input {
+  width: 95%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #200a1a;
+  border-radius: 5px;
+}
+
+.login-signup-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: rgb(109, 31, 93);
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.login-signup-container button:hover {
+  background-color: #734869;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.select-div label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.styled-select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.styled-select:hover {
+  border-color: #200a1a;
+}
+
+.styled-select option {
+  padding: 10px;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .login-signup-container {
+    padding: 15px;
+    width: 50%;
+  }
+
+  input[type="text"],
+  input[type="password"],
+  button {
+    font-size: 14px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-signup-container {
+    padding: 10px;
+    width: 50%;
+  }
+
+  input[type="text"],
+  input[type="password"],
+  button {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,87 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #e3c3e6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+header {
+  width: 100%;
+  text-align: center;
+  background-color: rgb(188, 158, 191);
+  color: white;
+  padding: 1rem 0;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+main {
+  width: 80%;
+  margin: 2rem auto;
+}
+
+table {
+  display: grid;
+  width: 100%;
+  border-collapse: collapse;
+  background: rgb(230, 217, 224);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+thead {
+  display: contents;
+}
+
+tbody {
+  display: contents;
+}
+
+tr {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0.5rem 0;
+}
+
+th,
+td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  font-size: 1.8rem;
+  font-weight: bold;
+  background-color: #f0f0f0;
+}
+
+td {
+  font-size: 1.5rem;
+}
+
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr td[colspan] {
+  text-align: center;
+  font-style: italic;
+  color: #666;
+  grid-column: span 2;
+}

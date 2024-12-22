@@ -1,0 +1,41 @@
+* {
+  margin-bottom: 65px;
+}
+
+body {
+  display: block;
+  text-align: center;
+  font-family: "Funnel Display", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 150;
+  font-style: normal;
+  font-size: 30px;
+  color: rgb(231, 189, 210);
+  background-color: #200a1a;
+}
+
+h1 {
+  padding-top: 100px;
+}
+
+button {
+  font-family: "Funnel Display", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 150;
+  font-style: normal;
+  width: 170px;
+  height: 70px;
+  font-size: 30px;
+  margin: 0;
+  padding: 10px 20px;
+  background-color: rgb(109, 31, 93);
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #734869;
+}

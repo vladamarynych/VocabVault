@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VocabVault</title>
+    <link rel="stylesheet" href="/styles/profile.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chewy&family=Funnel+Display:wght@300..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chewy&family=Funnel+Display:wght@300..800&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Chewy&family=Funnel+Display:wght@300..800&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Knewave&family=Margarine&family=Mogra&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h3><%= user.language %></h3>
+    <header>VocabVault</header>
+    <h2>🩷<%=user.username%>🩷</h2>
+
+    <div class="container">
+      <div class="row circle-block">
+        <div class="block">
+          <div class="circle"><%=user.currentlevel%></div>
+          <p><a href="/improvement-select">Improve the level🌟</a></p>
+        </div>
+      </div>
+
+      <div class="row rectangle-block">
+        <div class="block">
+          <div class="rectangle"><%=wordCount%></div>
+          <p><a href="/dictionary">Learned words🎉</a></p>
+        </div>
+      </div>
+
+      <div class="row exclamation-block">
+        <div class="block">
+          <div class="exclamation">
+            <div class="line"></div>
+            <div class="dot"></div>
+          </div>
+          <p>
+            <% if (user.language === "Spanish") {%>
+            <a href="/grammarReviewS">Quick grammar review⚡</a>
+            <% } else{ %>
+            <a href="/grammarReviewF">Quick grammar review⚡</a>
+            <% } %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
